@@ -8,6 +8,7 @@ firebase.initializeApp(firebaseConfig)
 
 const Login = () => {
     const [newUser, setNewUser] = useState(false);
+    
     const [user, setUser] = useState({
         name: '',
         email: '',
@@ -15,11 +16,7 @@ const Login = () => {
         error: '',
         success:false
     });
-    const [newUserInfo, setNewUserInfo] = useState({
-        // name:'',
-        // email: '',
-        // password:''
-    });
+   
 
 
 
@@ -27,10 +24,6 @@ const Login = () => {
 
     // console.log(newUser)
     const handleBlur = (e) => {
-        // const newUserInformation = {...newUserInfo};
-        //     newUserInformation[e.target.name] = e.target.value;
-        //     setNewUser(newUserInformation);
-        //    console.log(newUserInformation)
         let fieldValid = true;
 
         if (e.target.name === 'email') {
@@ -41,7 +34,6 @@ const Login = () => {
         if (e.target.name === 'password') {
 
             fieldValid = /\d/.test(e.target.value) && e.target.value.length > 6;
-  
         }
         if (fieldValid) {
             const userInfo = { ...user };
