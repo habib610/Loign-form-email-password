@@ -8,7 +8,6 @@ firebase.initializeApp(firebaseConfig)
 
 const Login = () => {
     const [newUser, setNewUser] = useState(false);
-    
     const [user, setUser] = useState({
         name: '',
         email: '',
